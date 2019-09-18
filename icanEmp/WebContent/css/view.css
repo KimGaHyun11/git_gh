@@ -1,0 +1,28 @@
+@charset "UTF-8";
+label{
+
+}
+
+table{
+width : 1000px;
+
+}
+tr, td, th{
+text-align : center;
+border : 2px solid #000;
+}
+
+th{
+	width : 120px;
+}
+
+
+#basic th{
+	width: 300px;
+}
+#basic td{
+	width : 700px;
+}
+
+
+

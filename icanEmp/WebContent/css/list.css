@@ -1,0 +1,27 @@
+form{
+	position : relative;
+}
+ 
+ 
+ a{
+    text-decoration : none; /*글씨밑줄삭제*/
+}
+ 
+ table {
+    width: 100%;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+  }
+  th, td, tr{
+    border-bottom: 1px solid #444444;
+    padding: 10px;
+    text-align :center;
+  }
+#msg{
+	color: red;
+	text-align :center;
+}
+
+#paging{
+	text-align :center;
+}

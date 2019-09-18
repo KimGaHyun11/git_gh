@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<!-- struts.xml : 이미 만들어진 Action과 result의 매핑을 함
+                  요청url과 Action을 매핑하고 Action과 result를 묶는 일
+-->                   
+<struts>
+
+   <!-- 연습예제
+   <package name="example"  namespace="/"  extends="struts-default">  
+      <action name="exam"  class="example.HelloAction">action name : URL역할
+          <result name="success">/result.jsp</result>return되는 string값
+      </action> 
+   </package> -->
+   
+   <package name="login" namespace="/" extends="struts-default">
+      <!-- 로그인 완료 후 -->
+      <action name="eLogin" class="com.icanman.action.LoginAction">     
+           <result name="login">/view/result.jsp</result>
+      </action>
+      
+      <!-- 로그아웃 후 로그인화면으로 -->
+      <action name="eLogout" class="com.icanman.action.LogoutAction">     
+           <result name="logout">/view/login.jsp</result>
+      </action>     
+   </package>
+   
+   <package name="select" namespace="/" extends="struts-default"> 
+      <!-- 리스트화면으로(재직자조회) -->
+      <action name="eList" class="com.icanman.action.ListAction">
+      <result name="list">/view/list.jsp</result>
+      </action>
+      
+      <!-- 뷰화면으로 -->
+      <action name="eView" class="com.icanman.action.ViewAction">
+        <interceptor-ref name="prepare"/>
+      <interceptor-ref name="modelDriven"/>
+      <interceptor-ref name="params"/>
+      <result name="view">/view/view.jsp</result>
+      </action>
+
+   </package>
+   
+      <package name="insert" namespace="/" extends="struts-default">
+
+      <!-- 등록화면으로 -->
+      <action name="eInsert" class="com.icanman.action.InsertAction">
+      <result name="insert">/view/insert.jsp</result>
+      </action>
+      
+      <!-- 등록완료 시 -->
+      <action name="eInput" class="com.icanman.action.InputAction">
+      <interceptor-ref name="prepare"/>
+      <interceptor-ref name="modelDriven"/>
+      <interceptor-ref name="params"/>
+      <result name="input">/view/result.jsp</result>
+      </action>
+      
+   </package>
+   
+    <package name="modify" namespace="/" extends="struts-default">
+      <!-- 수정화면으로 -->
+      <action name="eModify" class="com.icanman.action.ModifyAction">
+      <result name="modify">/view/modify.jsp</result>
+      </action>
+      
+       <!-- 수정완료 시 -->
+      <action name="eModified" class="com.icanman.action.ModifiedAction">
+      <result name="modified">/view/result.jsp</result>
+      </action>
+   </package>
+   
+   <package name="admin" namespace="/" extends="struts-default">
+      <!-- 관리자 활동이력리스트 -->
+      <action name="eAdmin" class="com.icanman.action.AdminAction">
+      <result name="admin">/view/admin.jsp</result>
+      </action>
+      
+   </package>
+
+</struts>
